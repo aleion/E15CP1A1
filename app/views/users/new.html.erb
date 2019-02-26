@@ -1,0 +1,16 @@
+<h1>Creacion de usuario</h1>
+<%= form_with(model: @user) do |f| %>
+ <div class="field">
+ <%= f.label :name, 'Ingresa tu nombre' %><br />
+ <%= f.text_field :name %>
+ </div>
+ <div class="field">
+ <%= f.label :email, 'Ingresa tu Email'%><br />
+ <%= f.text_field :email %>
+ </div>
+ <div class="field">
+ <%= f.label :password, 'Ingresa una contraseña' %><br />
+ <%= f.password_field :password %>
+ </div>
+ <div class="actions"><%= f.submit "Sign Up" %></div>
+<% end %>

@@ -11,24 +11,18 @@
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li><a href="#">Link1</a></li>
-        <li><a href="#">Link2</a></li>
-      </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
+        
+        
+        <% if logged? %>
+        <li style="color: white;"><%= current_user.name %><%= link_to "salir", session_path(current_user), method: :delete %></li>
+        <% else%>
+        <li><%= link_to 'Registrarse', users_sign_up_path %></li>
+        <li><%= link_to 'Iniciar Sesion', users_sign_in_path %></li>
+        <% end %>
+        
       </ul>
+      
     </div>
   </div>
 </nav>
